@@ -3,25 +3,21 @@ package com.example.presidentvote.domain;
 //회원 객체
 public class Member {
 
-    private Long id; //아이디
-    private Long password; //비밀번호
+    private String id; //아이디
+    private String password; //비밀번호
     private String name; //이름
     private int number; //전화번호
-    private Boolean sex; //성별
-    
-    public Long getId() {
-        return id;
-    }
+    private Long RRN; //주민등록번호
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public String getId() { return id; }
 
-    public Long getPassword() {
+    public void setId(String id) { this.id = id; }
+
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(Long password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -41,13 +37,7 @@ public class Member {
         this.number = number;
     }
 
-    public Boolean getSex() {
-        return sex;
-    }
+    public Long getRRN() { return RRN; }
 
-    public void setSex(Boolean sex) {
-        this.sex = sex;
-    }
-
-
+    public void setRRN(Long RRN) { this.RRN = RRN; }
 }

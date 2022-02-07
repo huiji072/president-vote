@@ -6,18 +6,21 @@ import java.util.*;
 
 public class MemoryMemberRepository implements MemberRepository{
 
-    private static Map<Long, Member> store = new HashMap<>();
-    private static long sequence = 0L;
+    private static Map<String, Member> store = new HashMap<>();
+    //private static long sequence = 0L;
 
 
     @Override
     public Member save(Member member) {
-        member.setId(++sequence);
+       // member.setId(++sequence);
         store.put(member.getId(), member);
+        store.put(String.valueOf(member.getNumber()), member);
+        store.put(String.valueOf(member.getRRN()), member);
         return member;
     }
+
     @Override
-    public Optional<Member> findById(Long id) {
+    public Optional<Member> findById(String id) {
         return Optional.ofNullable(store.get(id));
     }
     @Override
@@ -35,7 +38,7 @@ public class MemoryMemberRepository implements MemberRepository{
     }
 
     @Override
-    public Optional<Member> findByPassword(Long password) {
+    public Optional<Member> findByPassword(String password) {
         return Optional.empty();
     }
 
@@ -46,7 +49,7 @@ public class MemoryMemberRepository implements MemberRepository{
     }
 
     @Override
-    public Optional<Member> findBySex(Long sex) {
+    public Optional<Member> findByRNN(Long RNN) {
         return Optional.empty();
     }
 

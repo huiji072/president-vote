@@ -10,13 +10,13 @@ import java.util.Optional;
 public interface MemberRepository {
 
     //회원 저장
-    Member save(Member member); 
+    Member save(Member member);
     //회원 반환
-    Optional<Member> findById(Long id);
-    Optional<Member> findByPassword(Long password);
+    Optional<Member> findById(String id);
+    Optional<Member> findByPassword(String password);
     Optional<Member> findByName(String name);
     Optional<Member> findByNumber(Long Number);
-    Optional<Member> findBySex(Long sex);
+    Optional<Member> findByRNN(Long RNN);
     List<Member> findAll();
 
 }
