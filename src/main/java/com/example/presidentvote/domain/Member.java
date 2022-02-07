@@ -6,7 +6,7 @@ public class Member {
     private String id; //아이디
     private String password; //비밀번호
     private String name; //이름
-    private int number; //전화번호
+    private Long number; //전화번호
     private Long RRN; //주민등록번호
 
     public String getId() { return id; }
@@ -29,11 +29,11 @@ public class Member {
         this.name = name;
     }
 
-    public int getNumber() {
+    public Long getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(Long number) {
         this.number = number;
     }
 
