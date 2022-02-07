@@ -1,6 +1,7 @@
 package com.example.presidentvote.repository;
 
 import com.example.presidentvote.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import javax.naming.Name;
 import java.util.*;
