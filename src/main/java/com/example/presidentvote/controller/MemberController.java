@@ -28,9 +28,14 @@ public class MemberController {
     @PostMapping("/members/new")
     public String create(MemberForm form) {
         Member member = new Member();
+        member.setId(form.getId());
+        member.setPassword(form.getPassword());
         member.setName(form.getName());
+        member.setRRN(form.getRRN());
+        member.setNumber(form.getNumber());
 
-        System.out.println("member : "+member.getName());
+        System.out.println("member : " + member.getName());
+        System.out.println("rrn : " + member.getRRN());
 
         memberService.join(member);
         return "redirect:/";
