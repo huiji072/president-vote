@@ -12,6 +12,7 @@ public interface MemberRepository {
     //회원 저장
     Member save(Member member);
     //회원 반환
+   // Optional<Member> findByNum(Long num);
     Optional<Member> findById(String id);
     Optional<Member> findByPassword(String password);
     Optional<Member> findByName(String name);

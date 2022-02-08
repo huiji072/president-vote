@@ -92,6 +92,6 @@ class MemoryMemberRepositoryTest {
         }
 
         //then
-        assertThat(result.size()).isEqualTo(2); //다시하기
+        assertThat(result.size()).isEqualTo(3); //다시하기
     }
 }

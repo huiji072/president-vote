@@ -14,8 +14,7 @@ public class MemoryMemberRepository implements MemberRepository{
 
     @Override
     public Member save(Member member) {
-       // member.setId(++sequence);
-        store.put(member.getId(), member);
+     //   store.put(member.getId(), member);
 //        store.put(member.getPassword(), member);
         store.put(member.getName(), member); //인식안됨
 //        store.put(String.valueOf(member.getNumber()), member);
@@ -23,11 +22,14 @@ public class MemoryMemberRepository implements MemberRepository{
         return member;
     }
 
+//    @Override
+//    public Optional<Member> findByNum(Long num) {
+//        return Optional.ofNullable(store.get(num));
+//    }
+
     @Override
     public Optional<Member> findById(String id) {
-        return store.values().stream()
-                .filter(member -> member.getId().equals(id))
-                .findAny();
+        return Optional.ofNullable(store.get(id));
     }
 
     @Override
@@ -52,16 +54,12 @@ public class MemoryMemberRepository implements MemberRepository{
 
     @Override
     public Optional<Member> findByNumber(Long number) {
-        return store.values().stream()
-                .filter(member -> member.getNumber().equals(number))
-                .findAny();
+        return Optional.ofNullable(store.get(number));
     }
 
     @Override
     public Optional<Member> findByRNN(Long RRN) {
-        return store.values().stream()
-                .filter(member -> member.getRRN().equals(RRN))
-                .findAny();
+        return Optional.ofNullable(store.get(RRN));
     }
 
     public void clearStore() {

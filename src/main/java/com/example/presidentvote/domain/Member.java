@@ -3,12 +3,20 @@ package com.example.presidentvote.domain;
 //회원 객체
 public class Member {
 
+   // private Long num;
     private String id; //아이디
     private String password; //비밀번호
     private String name; //이름
     private Long number; //전화번호
     private Long RRN; //주민등록번호
 
+//    public Long getNum() {
+//        return num;
+//    }
+//
+//    public void setNum(Long num) {
+//        this.num = num;
+//    }
     public String getId() { return id; }
 
     public void setId(String id) { this.id = id; }
