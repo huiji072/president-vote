@@ -3,6 +3,7 @@ package com.example.presidentvote.controller;
 import com.example.presidentvote.domain.Member;
 import com.example.presidentvote.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,6 +35,7 @@ public class MemberController {
         member.setRRN(form.getRRN());
         member.setNumber(form.getNumber());
 
+        System.out.println("id:"+member.getId());
         System.out.println("member : " + member.getName());
         System.out.println("rrn : " + member.getRRN());
 

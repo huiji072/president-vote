@@ -22,6 +22,7 @@ public class MemberService {
     public String join(Member member) {
         validateDuplicateMember(member); //중복 회원 검증
         validateDuplicateMember2(member);
+        validateDuplicateMember3(member);
         memberRepository.save(member);
         return member.getId();
     }
@@ -33,11 +34,19 @@ public class MemberService {
                     throw new IllegalStateException("이미 존재하는 아이디입니다.");
                 });
     }
+    
 
     private void validateDuplicateMember2(Member member) {
-        memberRepository.findByRNN(member.getRRN())
+        memberRepository.findByRRN(member.getRRN())
                 .ifPresent(m -> {
                     throw new IllegalStateException("이미 존재하는 주민등록번호입니다.");
+                });
+    }
+
+    private void validateDuplicateMember3(Member member) {
+        memberRepository.findByNumber(member.getNumber())
+                .ifPresent(m -> {
+                    throw new IllegalStateException("이미 존재하는 전화번호입니다.");
                 });
     }
     /**

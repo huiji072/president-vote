@@ -17,7 +17,7 @@ public interface MemberRepository {
     Optional<Member> findByPassword(String password);
     Optional<Member> findByName(String name);
     Optional<Member> findByNumber(Long number);
-    Optional<Member> findByRNN(Long RNN);
+    Optional<Member> findByRRN(Long RRN);
     List<Member> findAll();
 
 }
