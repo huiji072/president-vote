@@ -1,22 +1,23 @@
 package com.example.presidentvote.domain;
 
+import javax.persistence.*;
+
 //회원 객체
+@Entity
 public class Member {
 
-   // private Long num;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(name="id")
     private String id; //아이디
+    @Column(name="password")
     private String password; //비밀번호
+    @Column(name="name")
     private String name; //이름
+    @Column(name="number")
     private Long number; //전화번호
+    @Column(name="RRN")
     private Long RRN; //주민등록번호
 
-//    public Long getNum() {
-//        return num;
-//    }
-//
-//    public void setNum(Long num) {
-//        this.num = num;
-//    }
+
     public String getId() { return id; }
 
     public void setId(String id) { this.id = id; }

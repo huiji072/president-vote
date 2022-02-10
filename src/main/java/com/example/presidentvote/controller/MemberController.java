@@ -23,7 +23,7 @@ public class MemberController {
 
     @GetMapping("/members/new")
     public String createForm() {
-        return "members/createMemberForm";
+        return "members/memberForm";
     }
 
     @PostMapping("/members/new")
@@ -35,9 +35,9 @@ public class MemberController {
         member.setRRN(form.getRRN());
         member.setNumber(form.getNumber());
 
-        System.out.println("id:"+member.getId());
-        System.out.println("member : " + member.getName());
-        System.out.println("rrn : " + member.getRRN());
+//        System.out.println("id:"+member.getId());
+//        System.out.println("member : " + member.getName());
+//        System.out.println("rrn : " + member.getRRN());
 
         memberService.join(member);
         return "redirect:/";
