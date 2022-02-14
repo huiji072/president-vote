@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<style>
+
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #666;
+}
+
+/* STRUCTURE */
+
+.wrapper {
+	padding: 5px;
+	max-width: 1000px;
+	width: 95%;
+	margin: 20px auto;
+}
+header {
+	padding: 0 15px;
+}
+
+.columns {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin: 5px 0;
+	height : 400px;
+}
+
+.column {
+	flex: 1;
+	border: 1px solid gray;
+	margin: 2px;
+	padding: 10px;
+	&:first-child { margin-left: 0; }
+	&:last-child { margin-right: 0; }
+
+}
+
+footer {
+	padding: 0 15px;
+}
+
+
+@media screen and (max-width: 980px) {
+  .columns .column {
+		margin-bottom: 5px;
+    flex-basis: 40%;
+		&:nth-last-child(2) {
+			margin-right: 0;
+		}
+		&:last-child {
+			flex-basis: 100%;
+			margin: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 680px) {
+	.columns .column {
+		flex-basis: 100%;
+		margin: 0 0 5px 0;
+	}
+}
+
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>온라인 투표</title>
+</head>
+
+<body>
+<div class="container">
+    <div>
+        <p style="text-align:center; font-size:50px;" >온라인 투표</p>
+        <p style="text-align:right;">
+            <a href="/members/new">회원 가입</a>
+            <a href="/login/memberLogin">로그인</a>
+            <a href="/members">회원 목록</a>
+            <br><br><br><br>
+    </div>
+</div>
+<div class="wrapper">
+
+    <!--        <header>-->
+    <!--            <h1>3 Column Responsive Layout</h1>-->
+    <!--        </header>-->
+
+    <section class="columns" style="text-align:center; line-height:100px;" >
+
+        <div class="column" style="background-image: url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)">
+            <h2>대통령 선거</h2>
+            <p>기간 20xx.xx.xx 08:00 ~ 18:00</p>
+            <a href="./introduce/president.html">후보소개</a>&nbsp&nbsp&nbsp
+            <a href="">투표하기</a>
+        </div>
+
+        <div class="column" style="background-image: url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
+            <h2>국회의원 선거</h2>
+            <p>기간 20xx.xx.xx 08:00 ~ 18:00</p>
+            <a href="">후보소개</a>&nbsp&nbsp&nbsp
+            <a href="">투표하기</a>
+        </div>
+
+        <div class="column" style="background-image: url(https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
+            <h2>시장 선거</h2>
+            <p>기간 20xx.xx.xx 08:00 ~ 18:00</p>
+            <a href="">후보소개</a>&nbsp&nbsp&nbsp
+            <a href="">투표하기</a>
+        </div>
+
+    </section>
+
+    <footer>
+        <h3>Footer</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, porro. Doloribus vitae non dolores modi dolorum commodi perspiciatis dicta nostrum minus esse, totam officia, quibusdam amet quas tempora? Voluptatibus, esse.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
